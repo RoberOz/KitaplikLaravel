@@ -24,5 +24,12 @@ class UserSeeder extends Seeder
           'image_url'=>'asdf'
         ]);
 
+        DB::table('books')->insert([
+          'name'=>'Fahrenheit 451',
+          'author_name'=>'Ray Bradbury',
+          'isbn_number'=>987654321,
+          'image_url'=>'qwerty'
+        ]);
+
     }
 }
