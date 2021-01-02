@@ -15,18 +15,13 @@ class sayfa extends Controller
     //]);
 
     $books=Book::all();
-    //echo $books;
+    echo $books;
 
-    foreach ($books as $book)
-    {
-      echo $book;
-      echo "<br>";
-    }
     //$user = new User;
     //$user->username="rober";
     //$user->password=1234;
     //$user->save();
 
-    //return "post çalıştı";
+    return "post çalıştı";
   }
 }
