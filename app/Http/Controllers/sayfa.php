@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Book;
-use App\User;
+//use App\User;
 
 class sayfa extends Controller
 {
@@ -17,10 +17,10 @@ class sayfa extends Controller
     $books=Book::all();
     echo $books;
 
-    $user = new User;
-    $user->username="rober";
-    $user->password=1234;
-    $user->save();
+    //$user = new User;
+    //$user->username="rober";
+    //$user->password=1234;
+    //$user->save();
 
     return "post çalıştı";
   }
