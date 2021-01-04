@@ -21,14 +21,12 @@ class UserSeeder extends Seeder
           'name'=>'Metro 2033',
           'author_name'=>'Dimitry',
           'isbn_number'=>123456789,
-          'image_url'=>'asdf'
         ]);
 
         DB::table('books')->insert([
           'name'=>'Fahrenheit 451',
           'author_name'=>'Ray Bradbury',
           'isbn_number'=>987654321,
-          'image_url'=>'qwerty'
         ]);
 
     }

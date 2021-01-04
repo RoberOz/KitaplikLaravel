@@ -1,3 +1,9 @@
+<?php
+  use App\Book;
+
+  $books=Book::all();
+  //echo $books;
+?>
 @extends('layouts.app')
 
 @section('content')
@@ -15,17 +21,23 @@
                     @endif
                     <table width = 100%>
                       <tr>
-                        <td><strong>Kitap</strong></td>
-                        <td><strong>Yazar</strong></td>
-                        <td><strong>ISBN Numarası</strong></td>
-                        <td><strong>Kapak Fotoğrafı</strong></td>
+                        <td><strong>-Kitap-</strong></td>
+                        <td><strong>-Yazar-</strong></td>
+                        <td><strong>-ISBN Numarası-</strong></td>
+                        <td><strong>-Sil-</strong></td>
+                        <td><strong>-Düzenle-</strong></td>
                       </tr>
-                      <tr>
-                        <td>Ana Sayfa!!</td>
-                        <td>Ana Sayfa!!</td>
-                        <td>Ana Sayfa!!</td>
-                        <td>Ana Sayfa!!</td>
-                      </tr>
+                      <?php
+                        foreach ($books as $book) {
+                      ?>
+                          <tr>
+                            <td> <?php echo $book['name']; ?> </td>
+                            <td> <?php echo $book['author_name']; ?> </td>
+                            <td> <?php echo $book['isbn_number']; ?> </td>
+                          </tr>
+                      <?php
+                        }
+                      ?>
                     </table>
                 </div>
             </div>

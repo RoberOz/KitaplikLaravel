@@ -25,7 +25,9 @@ class HomeController extends Controller
      */
     public function index()
     {
-        //return view('/');
-        return view('home');
+        $books=Book::all();
+        //echo $books;
+
+        return view('home')->with(compact('books'));
     }
 }
