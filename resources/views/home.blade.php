@@ -11,6 +11,7 @@
   //die;
 ?>
 
+
 @extends('layouts.app')
 
 @section('content')
@@ -31,7 +32,7 @@
                         <td><strong>-Kitap-</strong></td>
                         <td><strong>-Yazar-</strong></td>
                         <td><strong>-ISBN Numarası-</strong></td>
-                        <td><strong>-Sil-</strong></td>
+                        <td></td>
                         <td><strong>-Düzenle-</strong></td>
                       </tr>
                       <?php
@@ -41,7 +42,11 @@
                             <td> <?php echo $book['name']; ?> </td>
                             <td> <?php echo $book['author_name']; ?> </td>
                             <td> <?php echo $book['isbn_number']; ?> </td>
-                            <td>Sil</td>
+
+                            <td>
+                                <button class="js-delete-book-btn"  data-id= '$book->id'>Kitabı Sil</button>
+
+                            </td>
                             <td>Düzenle</td>
                           </tr>
                       <?php
@@ -54,3 +59,19 @@
     </div>
 </div>
 @endsection
+
+@push('javascript')
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+
+<script>
+    $('.js-delete-book-btn').on('click', function () {
+        let bookId = $(this).attr('data-id');
+        $.ajax({
+            headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
+            url: '{{ url('/posts/'.$book->id) }}',
+            method: 'delete',
+            //success: location.reload()
+        });
+    });
+</script>
+@endpush
