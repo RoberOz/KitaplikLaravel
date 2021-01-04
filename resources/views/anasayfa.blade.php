@@ -24,8 +24,6 @@
                         <td><strong>-Kitap-</strong></td>
                         <td><strong>-Yazar-</strong></td>
                         <td><strong>-ISBN Numarası-</strong></td>
-                        <td><strong>-Sil-</strong></td>
-                        <td><strong>-Düzenle-</strong></td>
                       </tr>
                       <?php
                         foreach ($books as $book) {
