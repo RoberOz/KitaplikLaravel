@@ -14,7 +14,7 @@ class CrudController extends Controller
      */
     public function index()
     {
-        //
+        return "index yeri";
     }
 
     /**
@@ -24,7 +24,7 @@ class CrudController extends Controller
      */
     public function create()
     {
-        return "burası create eden yer";
+        return "create yeri";
     }
 
     /**
@@ -35,7 +35,7 @@ class CrudController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        return "store yeri";
     }
 
     /**
@@ -46,7 +46,7 @@ class CrudController extends Controller
      */
     public function show($id)
     {
-        return "show layan yer".$id;
+        return "show yeri";
     }
 
     /**
@@ -80,9 +80,9 @@ class CrudController extends Controller
      */
     public function destroy($id)
     {
-        return $id;
-        //Book::where('id', $id)->delete();
+        //return $id;
+        Book::where('id', $id)->delete();
 
-        //return response()->json([], 204);
+        return response()->json([], 204);
     }
 }

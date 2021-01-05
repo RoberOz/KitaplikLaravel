@@ -39,12 +39,12 @@
                         foreach ($books as $book) {
                       ?>
                           <tr>
-                            <td> <?php echo $book['name']; ?> </td>
-                            <td> <?php echo $book['author_name']; ?> </td>
-                            <td> <?php echo $book['isbn_number']; ?> </td>
+                            <td> <?php echo $book->name; ?> </td>
+                            <td> <?php echo $book->author_name; ?> </td>
+                            <td> <?php echo $book->isbn_number; ?> </td>
 
                             <td>
-                                <button class="js-delete-book-btn"  data-id= '$book->id'>Kitabı Sil</button>
+                                <button class="js-delete-book-btn"  data-id={{$book->id}}>Kitabı Sil</button>
 
                             </td>
                             <td>Düzenle</td>
@@ -55,6 +55,7 @@
                     </table>
                 </div>
             </div>
+                                <a href="posts/" align="middle">Ekle</a>
         </div>
     </div>
 </div>
@@ -65,12 +66,13 @@
 
 <script>
     $('.js-delete-book-btn').on('click', function () {
-        let bookId = $(this).attr('data-id');
+        let bookId = $(this).attr("data-id");
+        console.log(bookId);
         $.ajax({
             headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
-            url: '{{ url('/posts/'.$book->id) }}',
+            url: '{{ url('/posts/')}}/'+bookId,
             method: 'delete',
-            //success: location.reload()
+            success: location.reload()
         });
     });
 </script>

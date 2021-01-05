@@ -29,9 +29,9 @@
                         foreach ($books as $book) {
                       ?>
                           <tr>
-                            <td> <?php echo $book['name']; ?> </td>
-                            <td> <?php echo $book['author_name']; ?> </td>
-                            <td> <?php echo $book['isbn_number']; ?> </td>
+                            <td> <?php echo $book->name; ?> </td>
+                            <td> <?php echo $book->author_name; ?> </td>
+                            <td> <?php echo $book->isbn_number; ?> </td>
                           </tr>
                       <?php
                         }

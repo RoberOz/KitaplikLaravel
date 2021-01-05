@@ -27,7 +27,7 @@ class HomeController extends Controller
     {
         $books=Book::all();
         //echo $books;
-
+        
         return view('home')->with(compact('books'));
     }
 }
