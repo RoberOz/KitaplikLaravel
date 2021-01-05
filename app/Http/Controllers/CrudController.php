@@ -24,7 +24,7 @@ class CrudController extends Controller
      */
     public function create()
     {
-        return "create yeri";
+        return view('create');
     }
 
     /**
@@ -35,7 +35,17 @@ class CrudController extends Controller
      */
     public function store(Request $request)
     {
-        return "store yeri";
+        //dd($request->all());
+        
+        $book = new Book;
+        $book->name=$request->name;
+        $book->author_name=$request->author_name;
+        $book->isbn_number=$request->isbn_number;
+        $book->save();
+
+        $books=Book::all();
+
+        return view('home')->with(compact('books'));
     }
 
     /**
@@ -46,7 +56,7 @@ class CrudController extends Controller
      */
     public function show($id)
     {
-        return "show yeri";
+        return "show yeri ".$id;
     }
 
     /**

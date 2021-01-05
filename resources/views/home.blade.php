@@ -55,7 +55,7 @@
                     </table>
                 </div>
             </div>
-                                <a href="posts/" align="middle">Ekle</a>
+                                <a href="posts/create">Ekle</a>
         </div>
     </div>
 </div>
