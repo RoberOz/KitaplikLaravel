@@ -12,11 +12,6 @@ class UserSeeder extends Seeder
      */
     public function run()
     {
-        //DB::table('users')->insert([
-        //  'username'=>'rober',
-        //  'password'=>1234
-        //]);
-
         DB::table('books')->insert([
           'name'=>'Metro 2033',
           'author_name'=>'Dimitry',

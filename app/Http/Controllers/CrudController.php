@@ -65,7 +65,15 @@ class CrudController extends Controller
      */
     public function edit($id)
     {
-        //
+        $book=Book::find($id);
+        if($book == null){
+          return redirect('home');
+        }
+        else{
+          //dd($data);
+
+          return view('edit',compact('book'));
+        }
     }
 
     /**
@@ -77,7 +85,18 @@ class CrudController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+      $book = Book::find($id);
+      if($book == null){
+        return redirect('home');
+      }
+      else{
+        $book->name=$request->name;
+        $book->author_name=$request->author_name;
+        $book->isbn_number=$request->isbn_number;
+        $book->save();
+
+        return redirect('home');
+      }
     }
 
     /**
