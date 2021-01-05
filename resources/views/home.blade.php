@@ -44,10 +44,9 @@
                             <td> <?php echo $book->isbn_number; ?> </td>
 
                             <td>
-                                <button class="js-delete-book-btn"  data-id={{$book->id}}>Kitabı Sil</button>
-
+                              <button class="js-delete-book-btn"  data-id={{$book->id}}>Kitabı Sil</button>
                             </td>
-                            <td>Düzenle</td>
+                            <td><a href={{route('posts.edit',$book->id)}}>Düzenle</a></td>
                           </tr>
                       <?php
                         }
