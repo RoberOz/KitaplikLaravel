@@ -13,6 +13,17 @@
                             {{ session('status') }}
                         </div>
                     @endif
+
+                    <div style="background-color:lightblue">
+                      <?php
+                        foreach ($errors->all() as $error) {
+                      ?>
+                          <li>{{$error}}</li>
+                      <?php
+                        }
+                      ?>
+                    </div>
+
                     <form method="post" action="{{url('/posts',$book->id)}}">
                       {{ method_field('PUT') }}
                       {{ csrf_field() }}
@@ -27,7 +38,9 @@
                       <br>
                       <button type="submit">Güncelle</button>
                     </form>
+
                     <a href={{route('home')}}>Geri Dön</a>
+
                 </div>
             </div>
         </div>

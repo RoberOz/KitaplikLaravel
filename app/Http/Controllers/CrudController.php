@@ -43,6 +43,12 @@ class CrudController extends Controller
     {
         //dd($request->all());
 
+        $this->validate($request,[
+          'name'=>'required | min:3 | max:70',
+          'author_name'=>'required | max:70',
+          'isbn_number'=>'required | numeric'
+        ]);
+
         $book = new Book;
         $book->name=$request->name;
         $book->author_name=$request->author_name;
@@ -91,6 +97,12 @@ class CrudController extends Controller
      */
     public function update(Request $request, $id)
     {
+      $this->validate($request,[
+        'name'=>'required | min:3 | max:70',
+        'author_name'=>'required | max:70',
+        'isbn_number'=>'required | numeric'
+      ]);
+
       $book = Book::find($id);
       if($book == null){
         return redirect('home');
