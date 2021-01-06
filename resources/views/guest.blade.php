@@ -26,9 +26,7 @@
                         <td align="center"><strong>-Yazar-</strong></td>
                         <td align="center"><strong>-ISBN Numarası-</strong></td>
                       </tr>
-                      <?php
-                        foreach ($books as $book) {
-                      ?>
+                        @foreach ($books as $book)
                           <tr height="120">
                             <td align="center">
                               @if(isset($book->image))
@@ -39,9 +37,7 @@
                             <td align="center"> <?php echo $book->author_name; ?> </td>
                             <td align="center"height = 35> <?php echo $book->isbn_number; ?> </td>
                           </tr>
-                      <?php
-                        }
-                      ?>
+                    @endforeach
                     </table>
                 </div>
             </div>

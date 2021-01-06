@@ -36,9 +36,7 @@
                         <td align="center"></td>
                         <td align="center"><strong></strong></td>
                       </tr>
-                      <?php
-                        foreach ($books as $book) {
-                      ?>
+                        @foreach ($books as $book) {
                           <tr height="120">
                             <td align="center">
                               @if(isset($book->image))
@@ -61,9 +59,7 @@
                               <button class="js-delete-book-btn"  data-id={{$book->id}}>Kitabı Sil</button>
                             </td>
                           </tr>
-                      <?php
-                        }
-                      ?>
+                        @endforeach
                     </table>
 
                 </div>

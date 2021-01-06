@@ -21,18 +21,11 @@
                     <h3 align="center"><strong> <?php echo $book->name; ?> </strong></h3>
                     <h4 align="center"><strong> <?php echo $book->author_name; ?> </strong></h4>
 
-                    <?php
-                    if(isset($book->image))
-                    {
-                    ?>
-
+                    @if(isset($book->image))
                       <div align="center">
                         <img align="center" src="{{asset($book->image)}}" width="150">
                       </div>
-
-                    <?php
-                    }
-                    ?>
+                    @endif
 
                     <br>
                     <div>

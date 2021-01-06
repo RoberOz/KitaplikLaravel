@@ -20,13 +20,9 @@
                     @endif
 
                     <div style="background-color:lightblue">
-                      <?php
-                        foreach ($errors->all() as $error) {
-                      ?>
+                        @foreach ($errors->all() as $error) {
                           <li>{{$error}}</li>
-                      <?php
-                        }
-                      ?>
+                        @endforeach
                     </div>
 
                       <form method="post" action="{{url('/posts')}}" enctype="multipart/form-data">
