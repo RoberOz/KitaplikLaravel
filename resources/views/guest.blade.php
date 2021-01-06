@@ -20,18 +20,18 @@
                         </div>
                     @endif
                     <table width = 100%>
-                      <tr>
-                        <td><strong>-Kitap-</strong></td>
-                        <td><strong>-Yazar-</strong></td>
-                        <td><strong>-ISBN Numarası-</strong></td>
+                      <tr height = 35>
+                        <td align = "center"><strong>-Kitap-</strong></td>
+                        <td align = "center"><strong>-Yazar-</strong></td>
+                        <td align = "center"><strong>-ISBN Numarası-</strong></td>
                       </tr>
                       <?php
                         foreach ($books as $book) {
                       ?>
-                          <tr>
-                            <td> <?php echo $book->name; ?> </td>
-                            <td> <?php echo $book->author_name; ?> </td>
-                            <td> <?php echo $book->isbn_number; ?> </td>
+                          <tr height = 35>
+                            <td align = "center"> <?php echo $book->name; ?> </td>
+                            <td align = "center"> <?php echo $book->author_name; ?> </td>
+                            <td align = "center"height = 35> <?php echo $book->isbn_number; ?> </td>
                           </tr>
                       <?php
                         }

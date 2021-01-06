@@ -27,34 +27,41 @@
                             {{ session('status') }}
                         </div>
                     @endif
+
                     <table width = 100%>
-                      <tr>
-                        <td><strong>-Kitap-</strong></td>
-                        <td><strong>-Yazar-</strong></td>
-                        <td><strong>-ISBN Numarası-</strong></td>
-                        <td></td>
-                        <td><strong>-Düzenle-</strong></td>
+                      <tr height = 35>
+                        <td align = "center"><strong>-Kitap-</strong></td>
+                        <td align = "center"><strong>-Yazar-</strong></td>
+                        <td align = "center"><strong>-ISBN Numarası-</strong></td>
+                        <td align = "center"></td>
+                        <td align = "center"><strong>-Düzenle-</strong></td>
                       </tr>
                       <?php
                         foreach ($books as $book) {
                       ?>
-                          <tr>
-                            <td> <?php echo $book->name; ?> </td>
-                            <td> <?php echo $book->author_name; ?> </td>
-                            <td> <?php echo $book->isbn_number; ?> </td>
+                          <tr height = 35>
+                            <td align = "center"> <?php echo $book->name; ?> </td>
+                            <td align = "center"> <?php echo $book->author_name; ?> </td>
+                            <td align = "center"> <?php echo $book->isbn_number; ?> </td>
 
-                            <td>
+                            <td align = "center">
                               <button class="js-delete-book-btn"  data-id={{$book->id}}>Kitabı Sil</button>
                             </td>
-                            <td><a href={{route('posts.edit',$book->id)}}>Düzenle</a></td>
+
+                            <td align = "center">
+                              <strong><a href={{route('posts.edit',$book->id)}}>Düzenle</a></strong>
+                            </td>
                           </tr>
                       <?php
                         }
                       ?>
                     </table>
+
                 </div>
             </div>
-                                <a href="posts/create">Ekle</a>
+              <div align = "center">
+                <strong><a href="posts/create">Ekle</a></strong>
+              </div>
         </div>
     </div>
 </div>

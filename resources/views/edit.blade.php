@@ -46,7 +46,9 @@
                         </form>
                       </table>
 
-                    <a href={{route('home')}}>Geri Dön</a>
+                    <div align = "right">
+                      <strong><a href={{route('home')}}>Geri Dön</a></strong>
+                    </div>
 
                 </div>
             </div>
