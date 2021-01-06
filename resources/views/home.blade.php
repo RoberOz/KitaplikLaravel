@@ -45,7 +45,7 @@
                             <td align = "center"> <?php echo $book->isbn_number; ?> </td>
 
                             <td align = "center">
-                              <button onclick="location.href='{{route('posts.index',$book->id)}}'">Görüntüle</button>
+                              <button onclick="location.href='{{route('posts.show',$book->id)}}'">Görüntüle</button>
                             </td>
 
                             <td align = "center">

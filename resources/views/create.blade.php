@@ -24,29 +24,30 @@
                       ?>
                     </div>
 
-                    <table align = "center">
                       <form method="post" action="{{url('/posts')}}">
-                        {{ csrf_field() }}
-                        <tr height = 35>
-                          <td align = "center" width = "115"><label>Kitabın İsmi:</label></td>
-                          <td align = "center"><input type="text" name="name" value="{{old('name')}}"></input></td>
-                        </tr>
-                        <tr height = 35>
-                          <td align = "center"><label>Yazarın İsmi: </label></td>
-                          <td align = "center"><input type="text" name="author_name" value="{{old('author_name')}}"></input></td>
-                        </tr>
-                        <tr height = 35>
-                          <td align = "center"><label>ISBN Numarası: </label></td>
-                          <td align = "center"><input type="text" name="isbn_number" value="{{old('isbn_number')}}"></input></td>
-                        </tr>
-                        <tr height = 35>
-                          <td align = "center" colspan = "2"><button type="submit">Oluştur</button></td>
-                        </tr>
+                        <table align="center">
+                          {{ csrf_field() }}
+                          <tr height="35">
+                            <td align='center' width = "115"><label>Kitabın İsmi:</label></td>
+                            <td align="center"><input type="text" name="name" value="{{old('name')}}"></input></td>
+                          </tr>
+                          <tr height="35">
+                            <td align="center"><label>Yazarın İsmi: </label></td>
+                            <td align="center"><input type="text" name="author_name" value="{{old('author_name')}}"></input></td>
+                          </tr>
+                          <tr height="35">
+                            <td align="center"><label>ISBN Numarası: </label></td>
+                            <td align="center"><input type="text" name="isbn_number" value="{{old('isbn_number')}}"></input></td>
+                          </tr>
+                          <tr height="35">
+                            <td align="center" colspan="2"><button type="submit">Oluştur</button></td>
+                          </tr>
+                        </table>
                       </form>
-                    </table>
 
-                    <div align = "right">
-                      <strong><a href={{route('home')}}>Geri Dön</a></strong>
+
+                    <div align="right">
+                      <strong><a href="{{route('home')}}">Geri Dön</a></strong>
                     </div>
 
                 </div>

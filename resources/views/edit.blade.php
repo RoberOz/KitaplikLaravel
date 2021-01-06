@@ -24,8 +24,8 @@
                       ?>
                     </div>
 
-                      <table align = "center">
-                        <form method="post" action="{{url('/posts',$book->id)}}">
+                      <form method="post" action="{{url('/posts',$book->id)}}">
+                        <table align = "center">
                           {{ method_field('PUT') }}
                           {{ csrf_field() }}
                           <tr height = 35>
@@ -43,8 +43,9 @@
                           <tr height = 35>
                             <td align = "center" colspan = "2"><button type="submit">Güncelle</button></td>
                           </tr>
-                        </form>
-                      </table>
+                        </table>
+                      </form>
+
 
                     <div align = "right">
                       <strong><a href={{route('home')}}>Geri Dön</a></strong>
