@@ -19,6 +19,7 @@
                             {{ session('status') }}
                         </div>
                     @endif
+                    
                     <table width=100%>
                       <tr height="35">
                         <td></td>
@@ -37,7 +38,7 @@
                             <td align="center"> <?php echo $book->author_name; ?> </td>
                             <td align="center"height = 35> <?php echo $book->isbn_number; ?> </td>
                           </tr>
-                    @endforeach
+                        @endforeach
                     </table>
                 </div>
             </div>

@@ -36,7 +36,7 @@
                         <td align="center"></td>
                         <td align="center"><strong></strong></td>
                       </tr>
-                        @foreach ($books as $book) {
+                        @foreach ($books as $book)
                           <tr height="120">
                             <td align="center">
                               @if(isset($book->image))
