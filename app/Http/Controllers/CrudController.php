@@ -41,7 +41,6 @@ class CrudController extends Controller
      */
     public function store(Request $request)
     {
-        //dd($request->all());
 
         $this->validate($request,[
           'name'=>'required | min:3 | max:70',

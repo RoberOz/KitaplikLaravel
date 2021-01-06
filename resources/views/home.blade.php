@@ -45,11 +45,15 @@
                             <td align = "center"> <?php echo $book->isbn_number; ?> </td>
 
                             <td align = "center">
+                              <button onclick="location.href='{{route('posts.index',$book->id)}}'">Görüntüle</button>
+                            </td>
+
+                            <td align = "center">
                               <button class="js-delete-book-btn"  data-id={{$book->id}}>Kitabı Sil</button>
                             </td>
 
                             <td align = "center">
-                              <strong><a href={{route('posts.edit',$book->id)}}>Düzenle</a></strong>
+                              <button onclick="location.href='{{route('posts.edit',$book->id)}}'">Düzenle</button>
                             </td>
                           </tr>
                       <?php
@@ -60,7 +64,7 @@
                 </div>
             </div>
               <div align = "center">
-                <strong><a href="posts/create">Ekle</a></strong>
+                <button onclick="location.href='posts/create'">Ekle</button>
               </div>
         </div>
     </div>
