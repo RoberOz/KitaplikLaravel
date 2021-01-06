@@ -24,22 +24,29 @@
                       ?>
                     </div>
 
-                    <form method="post" action="{{url('/posts')}}">
-                      {{ csrf_field() }}
-                      <label>Kitabın İsmi:</label>
-                      <input type="text" name="name" value="{{old('name')}}" required></input>
-                      <br>
-                      <label>Yazarın İsmi: </label>
-                      <input type="text" name="author_name" value="{{old('author_name')}}" required></input>
-                      <br>
-                      <label>ISBN Numarası: </label>
-                      <input type="text" name="isbn_number" value="{{old('isbn_number')}}" required></input>
-                      <br>
-                      <button type="submit">Oluştur</button>
-                    </form>
+                    <table align = "center">
+                      <form method="post" action="{{url('/posts')}}">
+                        {{ csrf_field() }}
+                        <tr height = 35>
+                          <td align = "center" width = "115"><label>Kitabın İsmi:</label></td>
+                          <td align = "center"><input type="text" name="name" value="{{old('name')}}" required></input></td>
+                        </tr>
+                        <tr height = 35>
+                          <td align = "center"><label>Yazarın İsmi: </label></td>
+                          <td align = "center"><input type="text" name="author_name" value="{{old('author_name')}}" required></input></td>
+                        </tr>
+                        <tr height = 35>
+                          <td align = "center"><label>ISBN Numarası: </label></td>
+                          <td align = "center"><input type="text" name="isbn_number" value="{{old('isbn_number')}}" required></input></td>
+                        </tr>
+                        <tr height = 35>
+                          <td align = "center" colspan = "2"><button type="submit">Oluştur</button></td>
+                        <tr>
+                      </form>
+                    </table>
 
                     <a href={{route('home')}}>Geri Dön</a>
-                    
+
                 </div>
             </div>
         </div>

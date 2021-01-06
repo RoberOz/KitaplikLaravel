@@ -24,20 +24,27 @@
                       ?>
                     </div>
 
-                    <form method="post" action="{{url('/posts',$book->id)}}">
-                      {{ method_field('PUT') }}
-                      {{ csrf_field() }}
-                      <label>Kitabın İsmi:</label>
-                      <input type="text" name="name" required value="{{$book->name}}"></input>
-                      <br>
-                      <label>Yazarın İsmi: </label>
-                      <input type="text" name="author_name" required value="{{$book->author_name}}"></input>
-                      <br>
-                      <label>ISBN Numarası: </label>
-                      <input type="text" name="isbn_number" required value="{{$book->isbn_number}}"></input>
-                      <br>
-                      <button type="submit">Güncelle</button>
-                    </form>
+                      <table align = "center">
+                        <form method="post" action="{{url('/posts',$book->id)}}">
+                          {{ method_field('PUT') }}
+                          {{ csrf_field() }}
+                          <tr height = 35>
+                            <td align = "center" width = "115"><label>Kitabın İsmi:</label></td>
+                            <td align = "center"><input type="text" name="name" required value="{{$book->name}}"></input></td>
+                          </tr>
+                          <tr height = 35>
+                            <td align = "center"><label>Yazarın İsmi: </label></td>
+                            <td align = "center"><input type="text" name="author_name" required value="{{$book->author_name}}"></input></td>
+                          </tr>
+                          <tr height = 35>
+                            <td align = "center"><label>ISBN Numarası: </label></td>
+                            <td align = "center"><input type="text" name="isbn_number" required value="{{$book->isbn_number}}"></input></td>
+                          </tr>
+                          <tr height = 35>
+                            <td align = "center" colspan = "2"><button type="submit">Güncelle</button></td>
+                          </tr>
+                        </form>
+                      </table>
 
                     <a href={{route('home')}}>Geri Dön</a>
 
