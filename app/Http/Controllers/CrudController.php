@@ -41,17 +41,27 @@ class CrudController extends Controller
      */
     public function store(Request $request)
     {
-
         $this->validate($request,[
-          'name'=>'required | min:3 | max:70',
-          'author_name'=>'required | max:70',
-          'isbn_number'=>'required | numeric'
+          'name'=>'required|min:3|max:70',
+          'author_name'=>'required|max:70',
+          'isbn_number'=>'required|numeric',
+          'image'=>'image|max:2048',
+          'image.*' => 'mimes:jpeg,jpg,png',
+          'content'=>'required|min:10'
         ]);
 
         $book = new Book;
         $book->name=$request->name;
         $book->author_name=$request->author_name;
         $book->isbn_number=$request->isbn_number;
+        $book->content=$request->content;
+
+        if($request->hasFile('image')){
+          $imageName = str_slug($request->name).'.'.$request->image->getClientOriginalExtension();
+          $request->image->move(public_path('uploads'),$imageName);
+          $book->image='uploads/'.$imageName;
+        }
+
         $book->save();
 
         return redirect('home');
@@ -65,7 +75,13 @@ class CrudController extends Controller
      */
     public function show($id)
     {
-        return "show yeri ".$id;
+      $book=Book::find($id);
+      if($book == null){
+        return redirect('home');
+      }
+      else{
+        return view('showcase',compact('book'));
+      }
     }
 
     /**
@@ -99,7 +115,10 @@ class CrudController extends Controller
       $this->validate($request,[
         'name'=>'required | min:3 | max:70',
         'author_name'=>'required | max:70',
-        'isbn_number'=>'required | numeric'
+        'isbn_number'=>'required | numeric',
+        'image'=>'image|max:2048',
+        'image.*' => 'mimes:jpeg,jpg,png',
+        'content'=>'required|min:10'
       ]);
 
       $book = Book::find($id);
@@ -110,6 +129,13 @@ class CrudController extends Controller
         $book->name=$request->name;
         $book->author_name=$request->author_name;
         $book->isbn_number=$request->isbn_number;
+        $book->content=$request->content;
+
+        if($request->hasFile('image')){
+          $imageName = str_slug($request->name).'.'.$request->image->getClientOriginalExtension();
+          $request->image->move(public_path('uploads'),$imageName);
+          $book->image='uploads/'.$imageName;
+        }
         $book->save();
 
         return redirect('home');

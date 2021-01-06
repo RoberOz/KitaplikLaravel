@@ -18,7 +18,8 @@ class LibraryBooks extends Migration
             $table->string('name', 70);
             $table->string('author_name', 70);
             $table->string('isbn_number', 45);
-            $table->string('image_url', 255)->nullable();
+            $table->string('image', 255)->nullable();
+            $table->text('content');
         });
     }
 
