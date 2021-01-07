@@ -1,9 +1,3 @@
-<?php
-  use App\Book;
-
-  $books=Book::all();
-  //echo $books;
-?>
 @extends('layouts.app')
 
 @section('content')
@@ -19,7 +13,7 @@
                             {{ session('status') }}
                         </div>
                     @endif
-                    
+
                     <table width=100%>
                       <tr height="35">
                         <td></td>
@@ -34,9 +28,9 @@
                                 <img align="center" src="{{asset($book->image)}}" width="75">
                               @endif
                             </td>
-                            <td align="center"> <?php echo $book->name; ?> </td>
-                            <td align="center"> <?php echo $book->author_name; ?> </td>
-                            <td align="center"height = 35> <?php echo $book->isbn_number; ?> </td>
+                            <td align="center">{{$book->name}}</td>
+                            <td align="center">{{$book->author_name}}</td>
+                            <td align="center"height = 35>{{$book->isbn_number}}</td>
                           </tr>
                         @endforeach
                     </table>

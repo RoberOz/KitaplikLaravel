@@ -18,8 +18,8 @@
                         </div>
                     @endif
 
-                    <h3 align="center"><strong> <?php echo $book->name; ?> </strong></h3>
-                    <h4 align="center"><strong> <?php echo $book->author_name; ?> </strong></h4>
+                    <h3 align="center"><strong> {{$book->name}} </strong></h3>
+                    <h4 align="center"><strong> {{$book->author_name}} </strong></h4>
 
                     @if(isset($book->image))
                       <div align="center">
@@ -29,7 +29,7 @@
 
                     <br>
                     <div>
-                      <p><?php echo $book->content; ?></p>
+                      <p>{{$book->content}}</p>
                     </div>
 
                 </div>

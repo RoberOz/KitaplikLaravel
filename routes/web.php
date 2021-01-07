@@ -6,9 +6,11 @@
 
 //Route::post('/login','sayfa@post')->name('login.post');
 
-Route::get('/', function () {
-    return view('guest');
-});
+//Route::get('/', function () {
+//    return view('guest');
+//});
+
+Route::get('/', 'GuestController@index')->name('guest');
 
 Auth::routes();
 

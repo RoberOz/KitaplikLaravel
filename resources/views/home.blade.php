@@ -43,9 +43,9 @@
                                 <img align="center" src="{{asset($book->image)}}" width="75">
                               @endif
                             </td>
-                            <td align="center"> <?php echo $book->name; ?> </td>
-                            <td align="center"> <?php echo $book->author_name; ?> </td>
-                            <td align="center"> <?php echo $book->isbn_number; ?> </td>
+                            <td align="center">{{$book->name}}</td>
+                            <td align="center">{{$book->author_name}}</td>
+                            <td align="center">{{$book->isbn_number}}</td>
 
                             <td align="center">
                               <button onclick="location.href='{{route('posts.show',$book->id)}}'">Görüntüle</button>
