@@ -13,16 +13,15 @@ class UserSeeder extends Seeder
     public function run()
     {
         DB::table('books')->insert([
-          'name'=>'Metro 2033',
-          'author_name'=>'Dimitry',
-          'isbn_number'=>123456789,
+          'name' => 'Metro 2033',
+          'author_name' => 'Dimitry',
+          'isbn_number' => 123456789,
         ]);
 
         DB::table('books')->insert([
-          'name'=>'Fahrenheit 451',
-          'author_name'=>'Ray Bradbury',
-          'isbn_number'=>987654321,
+          'name' => 'Fahrenheit 451',
+          'author_name' => 'Ray Bradbury',
+          'isbn_number' => 987654321,
         ]);
-
     }
 }

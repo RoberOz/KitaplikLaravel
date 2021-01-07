@@ -2,9 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Book;
-use App\User;
 
 class HomeController extends Controller
 {
@@ -25,9 +23,9 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $books=Book::all();
+        $books = Book::all();
         //echo $books;
-        
+
         return view('home')->with(compact('books'));
     }
 }

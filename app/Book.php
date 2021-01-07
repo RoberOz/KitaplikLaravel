@@ -9,5 +9,5 @@ class Book extends Model
 {
     use SoftDeletes;
 
-    public $timestamps=false;
+    public $timestamps = false;
 }
