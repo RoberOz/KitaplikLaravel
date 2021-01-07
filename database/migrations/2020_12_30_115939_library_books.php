@@ -20,6 +20,7 @@ class LibraryBooks extends Migration
             $table->string('isbn_number', 45);
             $table->string('image', 255)->nullable();
             $table->text('content');
+            $table->softDeletes();
         });
     }
 
