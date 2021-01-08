@@ -20,7 +20,7 @@
                     @endif
 
                     <div style="background-color:lightblue">
-                        @foreach ($errors->all() as $error) 
+                        @foreach ($errors->all() as $error)
                           <li>{{$error}}</li>
                         @endforeach
                     </div>
