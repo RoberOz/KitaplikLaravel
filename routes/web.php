@@ -11,7 +11,6 @@
 //});
 
 Route::get('/', 'GuestController@index')->name('guest');
-
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
